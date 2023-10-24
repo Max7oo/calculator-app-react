@@ -5,11 +5,25 @@ function Numpad({ result, setResult }) {
     if (result[0] === 0) {
       result.shift();
     }
-    setResult([...result, e]);
+    const lastItem = result[result.length - 1];
+    if (lastItem === e) {
+      if (
+        lastItem === "+" ||
+        lastItem === "-" ||
+        lastItem === "*" ||
+        lastItem === "/" ||
+        lastItem === "."
+      ) {
+        return console.log("double symbol");
+      } else {
+        return setResult([...result, e]);
+      }
+    } else {
+      return setResult([...result, e]);
+    }
   };
 
   const delNumber = () => {
-    console.log(result);
     const newResult = result.slice(0, result.length - 1);
     setResult(newResult);
   };
@@ -19,7 +33,6 @@ function Numpad({ result, setResult }) {
   };
 
   const calculateResult = () => {
-    console.log(result.join(""));
     setResult([eval(result.join(""))]);
   };
 
