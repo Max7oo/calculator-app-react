@@ -1,0 +1,72 @@
+#numpad {
+    background-color: var(--numpad-bg);
+    padding: 25px;
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 25px;
+    row-gap: 25px;
+}
+
+#numpad span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--key-bg);
+    box-shadow: 0px 5px var(--key-shadow);
+    border-radius: 5px;
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-text);
+
+    transition: all 0.4s ease;
+}
+
+#numpad span:hover {
+    background-color: var(--key-bg-hover);
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+#numpad span.special {
+    background-color: var(--special-bg);
+    box-shadow: 0px 5px var(--special-shadow);
+    
+    font-size: 1.5rem;
+    color: var(--special-key);
+
+    transition: all 0.4s ease;
+}
+
+#numpad span.special:hover {
+    background-color: var(--special-bg-hover);
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
+
+#numpad span.special:nth-last-of-type(2) {
+    grid-column: span 2;
+}
+
+#numpad span.result {
+    grid-column: span 2;
+    background-color: var(--result-bg);
+    box-shadow: 0px 5px var(--result-shadow);
+
+    color: var(--result-key);
+
+    transition: all 0.4s ease;
+}
+
+#numpad span.result:hover {
+    background-color: var(--result-bg-hover);
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+}
